@@ -15,6 +15,12 @@ namespace NetHome.Common.JsonConverters
             this.assembly1 = assembly1;
             this.assembly2 = assembly2;
         }
+
+        public override bool CanConvert(Type type)
+        {
+            return typeof(T).IsAssignableFrom(type);
+        }
+
         public override T Read(
             ref Utf8JsonReader reader,
             Type typeToConvert,
@@ -27,7 +33,7 @@ namespace NetHome.Common.JsonConverters
             string typeName = reader.GetString();
             string qualifiedName = $"{assembly1}{typeName}, {assembly2}";
             Type type = Type.GetType(qualifiedName, true);
-            T t = (T)JsonSerializer.Deserialize(ref reader, type, options);
+            T t = (T)JsonSerializer.Deserialize(ref reader, type);
             if (!reader.Read() || reader.TokenType != JsonTokenType.EndObject)
                 throw new JsonException();
             return t;
@@ -37,7 +43,7 @@ namespace NetHome.Common.JsonConverters
         {
             writer.WriteStartObject();
             writer.WritePropertyName(value.GetType().Name);
-            JsonSerializer.Serialize(writer, value, value?.GetType() ?? typeof(object), options);
+            JsonSerializer.Serialize(writer, value, value?.GetType() ?? typeof(object));
             writer.WriteEndObject();
         }
     }

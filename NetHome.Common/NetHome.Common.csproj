@@ -4,12 +4,12 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>NetHome</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.16</Version>
+    <Version>1.0.19</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Runtime" Version="4.3.1" />
-    <PackageReference Include="System.Text.Json" Version="5.0.2" />
+    <PackageReference Include="System.Text.Json" Version="6.0.2" />
   </ItemGroup>
 
 </Project>
