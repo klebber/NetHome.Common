@@ -1,4 +1,4 @@
-﻿namespace NetHome.Common.Models.Devices
+﻿namespace NetHome.Common
 {
     public class THSensorModel : DeviceModel
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NetHome.Common.Models
+namespace NetHome.Common
 {
     public class UserModel
     {

@@ -1,4 +1,4 @@
-﻿using NetHome.Common.Models;
+﻿using NetHome.Common;
 
 namespace NetHome.Common
 {

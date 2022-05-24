@@ -1,4 +1,4 @@
-﻿namespace NetHome.Common.Models
+﻿namespace NetHome.Common
 {
     public abstract class DeviceModel
     {
